@@ -3,10 +3,8 @@ C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\bin\Debug\ProjektWPF.exe
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\bin\Debug\ProjektWPF.pdb
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.AssemblyReference.cache
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.SuggestedBindingRedirects.cache
-C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\MainWindow.g.cs
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\App.g.cs
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF_MarkupCompile.cache
-C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\MainWindow.baml
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.g.resources
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.Properties.Resources.resources
 C:\Users\zibi-\Source\Repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.GenerateResource.cache
@@ -23,3 +21,16 @@ C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF.csproj.Co
 C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\ButtonTheme.baml
 C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF_MarkupCompile.lref
 C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\App.baml
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\RegisterWindow.g.cs
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\RegisterWindow.baml
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\LoginWindow.baml
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\LoginWindow.g.cs
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\MainWindow.g.cs
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\MainWindow.baml
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\bin\Debug\ApplicationDatabase.mdf
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\bin\Debug\ApplicationDatabase_log.ldf
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\ProjektWPF_Content.g.cs
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\bin\Debug\EntityFramework.dll
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\bin\Debug\EntityFramework.xml
+C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\bin\Debug\EntityFramework.SqlServer.xml

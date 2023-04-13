@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjektWPF
@@ -25,12 +24,12 @@ namespace ProjektWPF
             InitializeComponent();
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.AlertTextBlock.Text = "Logged out";
+            loginWindow.Show();
+            this.Close();
         }
     }
 }
