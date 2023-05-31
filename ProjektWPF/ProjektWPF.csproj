@@ -65,7 +65,9 @@
     <Reference Include="MahApps.Metro.IconPacks.Material, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MahApps.Metro.IconPacks.Material.2.3.0\lib\net46\MahApps.Metro.IconPacks.Material.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -112,13 +114,16 @@
     <Compile Include="FilmViewing.cs">
       <DependentUpon>DatabaseModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Pages\Films.xaml.cs">
+      <DependentUpon>Films.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Note.cs">
       <DependentUpon>DatabaseModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegisterWindow.xaml.cs">
+    <Compile Include="Windows\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
@@ -128,7 +133,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginWindow.xaml">
+    <Page Include="Pages\Films.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -136,15 +145,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LoginWindow.xaml.cs">
+    <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegisterWindow.xaml">
+    <Page Include="Windows\RegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

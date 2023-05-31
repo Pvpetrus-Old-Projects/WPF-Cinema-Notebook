@@ -10,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjektWPF
+namespace ProjektWPF.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Interaction logic for Films.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Films : Page
     {
-        public MainWindow()
+        public Films()
         {
             InitializeComponent();
-        }
-
-        private void LogoutButton_Click(object sender, RoutedEventArgs e)
-        {
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.AlertTextBlock.Text = "Logged out";
-            loginWindow.Show();
-            this.Close();
         }
     }
 }

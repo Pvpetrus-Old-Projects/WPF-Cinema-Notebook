@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\obj\Debug\
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\
 ProjektWPF
 none
 false
 DEBUG;TRACE
-C:\Users\zibi-\source\repos\ProjektWPF\ProjektWPF\App.xaml
-4-1502437898
-4-781647837
-15831398620
-211866038056
-ButtonTheme.xaml;LoginWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\App.xaml
+51188300859
+4-2028817800
+16505039295
+21-1578045180
+ButtonTheme.xaml;Pages\Films.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RegisterWindow.xaml;
 
-False
+True
 
