@@ -23,6 +23,8 @@ namespace ProjektWPF
         public MainWindow()
         {
             InitializeComponent();
+            Films filmsPage = new Films();
+            mainFrame.Content = filmsPage;
         }
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {

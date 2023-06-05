@@ -24,7 +24,7 @@
             </Border.Background>
         </Border>
         <Frame Name="mainFrame" Grid.Row="1"/>
-        <Grid Grid.Column="1" Background="DarkBlue">
+        <Grid Grid.Column="1" Background="#404040">
             <Grid.RowDefinitions>
 
                 <RowDefinition/>

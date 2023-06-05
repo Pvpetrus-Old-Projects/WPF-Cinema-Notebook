@@ -20,9 +20,26 @@ namespace ProjektWPF.Pages
     /// </summary>
     public partial class Films : Page
     {
+        ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+        private List<Film> filmsL;
         public Films()
         {
             InitializeComponent();
+            filmsL = new List<Film>(from u in db.Film select u);
+/*            filmsL = new List<Film>(filmsFromDb);
+*/            
+            filmsList.DataContext = filmsL;
         }
+        void OnChecked(object sender, RoutedEventArgs e)
+        {
+            Film selectedElement = filmsList.SelectedItem as Film;
+            if (selectedElement != null)
+            {
+                Film film = filmsL.Find(el => el.Id == selectedElement.Id);
+                film.Viewed = !film.Viewed;
+                db.SaveChanges();
+            }
+        }
+
     }
 }

@@ -9,6 +9,40 @@
       Title="Films">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="Lista filmów" Margin="25, 0 , 0 ,0" FontSize="40px" 
+                   FontWeight="Black" Foreground="White"/>
+
+        <DataGrid Name="filmsList" Background="{x:Null}" ItemsSource="{Binding}" 
+                  AutoGenerateColumns="False" SelectionMode="Single"
+                  FontSize="15px" Grid.Row="1" Width="auto" 
+                 BorderThickness="2,4,2,1" BorderBrush="#FF6B6BD8"
+                     
+                  >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="" Binding="{Binding Viewed}" Width="20">
+                    <DataGridCheckBoxColumn.CellStyle>
+                        <Style>
+                            <EventSetter Event="CheckBox.Checked" Handler="OnChecked"/>
+                            <EventSetter Event="CheckBox.Unchecked" Handler="OnChecked"/>
+                        </Style>
+                    </DataGridCheckBoxColumn.CellStyle>
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn Header="Tytuł" Binding="{Binding Name}" IsReadOnly="True" Width="100" />
+                <DataGridTextColumn Header="Opis" Binding="{Binding Description}" IsReadOnly="True" Width="300" />
+                <DataGridTextColumn Header="Data premiery"  Binding="{Binding DateOfPremiere}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+           
+        </DataGrid>
+ 
+
+
+
     </Grid>
 </Page>
