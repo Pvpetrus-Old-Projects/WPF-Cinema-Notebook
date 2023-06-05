@@ -71,3 +71,41 @@ C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Windows\MainWindow.g.cs
 C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Windows\MainWindow.baml
 C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\Films.g.cs
 C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\Films.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ApplicationDatabase.mdf
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ApplicationDatabase_log.ldf
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ProjektWPF.exe.config
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ProjektWPF.exe
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ProjektWPF.pdb
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ControlzEx.dll
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\EntityFramework.dll
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\ControlzEx.pdb
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\EntityFramework.xml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.AssemblyReference.cache
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.SuggestedBindingRedirects.cache
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ButtonTheme.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Windows\LoginWindow.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Windows\RegisterWindow.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Pages\Films.g.cs
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Windows\RegisterWindow.g.cs
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\App.g.cs
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF_Content.g.cs
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF_MarkupCompile.cache
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF_MarkupCompile.lref
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\App.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Pages\Films.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\Windows\MainWindow.baml
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.g.resources
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.Properties.Resources.resources
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.GenerateResource.cache
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.CoreCompileInputs.cache
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.CopyComplete
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.exe
+C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.pdb

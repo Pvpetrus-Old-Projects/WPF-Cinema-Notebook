@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektWPF"
-        mc:Ignorable="d"
+        mc:Ignorable="d"  WindowStyle="None" MouseDown="Window_MouseDown"
         Title="MainWindow" Height="550" Width="800">
-    <Grid>
+    <Grid>        
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
