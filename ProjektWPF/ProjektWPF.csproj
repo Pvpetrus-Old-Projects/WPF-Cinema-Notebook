@@ -114,6 +114,9 @@
     <Compile Include="FilmViewing.cs">
       <DependentUpon>DatabaseModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FilmDetails.xaml.cs">
+      <DependentUpon>FilmDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Films.xaml.cs">
       <DependentUpon>Films.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
       <DependentUpon>DatabaseModels.tt</DependentUpon>
     </Compile>
     <Page Include="ButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FilmDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

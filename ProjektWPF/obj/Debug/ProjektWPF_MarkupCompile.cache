@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\App.xaml
-51188300859
+61616548839
 4-2028817800
-151347398662
+17-1084346099
 21-1578045180
-ButtonTheme.xaml;Pages\Films.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RegisterWindow.xaml;
+ButtonTheme.xaml;Pages\FilmDetails.xaml;Pages\Films.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RegisterWindow.xaml;
 
-False
+True
 

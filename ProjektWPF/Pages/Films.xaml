@@ -34,7 +34,15 @@
                         </Style>
                     </DataGridCheckBoxColumn.CellStyle>
                 </DataGridCheckBoxColumn>
-                <DataGridTextColumn Header="Tytuł" Binding="{Binding Name}" IsReadOnly="True" Width="100" />
+                <DataGridTextColumn Header="Tytuł" Binding="{Binding Name}"
+                                    IsReadOnly="True" Width="100" >
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <EventSetter Event="PreviewMouseDoubleClick" Handler="doubleClickOnFilm"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                
                 <DataGridTextColumn Header="Opis" Binding="{Binding Description}" IsReadOnly="True" Width="300" />
                 <DataGridTextColumn Header="Data premiery"  Binding="{Binding DateOfPremiere}" IsReadOnly="True"/>
             </DataGrid.Columns>

@@ -25,9 +25,7 @@ namespace ProjektWPF.Pages
         public Films()
         {
             InitializeComponent();
-            filmsL = new List<Film>(from u in db.Film select u);
-/*            filmsL = new List<Film>(filmsFromDb);
-*/            
+            filmsL = db.Film.ToList();       
             filmsList.DataContext = filmsL;
         }
         void OnChecked(object sender, RoutedEventArgs e)
@@ -37,9 +35,22 @@ namespace ProjektWPF.Pages
             {
                 Film film = filmsL.Find(el => el.Id == selectedElement.Id);
                 film.Viewed = !film.Viewed;
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    // Handle or log the exception
+                    Console.WriteLine("SaveChanges error: " + ex.Message);
+                }
             }
+            filmsList.SelectedItem = null;  //change selectedItem to null to prevent checking box by mistake again
         }
 
+        private void doubleClickOnFilm(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
