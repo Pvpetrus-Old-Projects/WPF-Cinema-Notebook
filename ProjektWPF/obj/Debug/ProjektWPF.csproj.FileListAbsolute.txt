@@ -109,3 +109,5 @@ C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.CoreCompileI
 C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.csproj.CopyComplete
 C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.exe
 C:\Users\BR\Desktop\WPF\proj\ProjektWPF\obj\Debug\ProjektWPF.pdb
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\FilmDetails.g.cs
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\FilmDetails.baml

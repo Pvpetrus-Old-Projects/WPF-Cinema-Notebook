@@ -14,21 +14,106 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock TextWrapping="Wrap" Text="Tytuł:" Margin="10, 5, 300, 40"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" />
+            <TextBox x:Name="filmTitle" FontFamily="helvetica"  FontSize="17px" Margin="10,5"
+                          Foreground="White" Background="Transparent" BorderThickness="1.3" 
+                         Width="auto" Height="40" Opacity="1" HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom" TextAlignment="Left"
+                         Padding="8,10,10,10" BorderBrush="#FA96F7">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Viewbox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                     Width="160" Margin="10,5">
+                <DatePicker Background="Transparent" x:Name="filmDate" BorderThickness="1.3" BorderBrush="#FA96F7" >
+                    <DatePicker.Resources>                        
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="Background" Value="Transparent"  />
+                            <Setter Property="Text" Value="----" />
+                        </Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                        <Style TargetType="DatePicker">
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="FontFamily" Value="helvetica" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+            </Viewbox>
+            <TextBlock Text="Data premiery:" Margin="10, 5, 300, 40"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" Grid.Row="1" />
+            <TextBlock FontSize="17px" Margin="10, 5"
+                   FontWeight="Black" Foreground="White" Grid.Row="2" Text="Obejrzany:"
+                       Width="auto">
+            </TextBlock>
+            <Viewbox Grid.Row="2" Width="25" Margin="110,7,4,15" 
+                     VerticalAlignment="Top" HorizontalAlignment="Left">
+                <CheckBox Width="auto" Height="auto" x:Name="filmViewed">
+                    <CheckBox.Resources>
+                        <SolidColorBrush x:Key="CheckBoxBackground" Color="Transparent" />
+                        <SolidColorBrush x:Key="CheckBoxBorder" Color="#F558EF" />
+                    </CheckBox.Resources>
+                    <CheckBox.Template>
+                        <ControlTemplate TargetType="CheckBox">
+                            <Grid Background="{StaticResource CheckBoxBackground}">
+                                <Border x:Name="PART_Border"
+                                            BorderBrush="{StaticResource CheckBoxBorder}" 
+                                            BorderThickness="3"
+                        Background="{TemplateBinding Background}" CornerRadius="1">
+                                    <Grid>
+                                        <Path x:Name="CheckMark" Visibility="Collapsed" Width="8" Height="8" 
+                              Data="M 0 4 L 4 8 L 8 0" Stroke="White" StrokeThickness="2" />
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+            </Viewbox>
+
+            <TextBlock Text="Opis:" Margin="10, 0"  Width="auto"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" Grid.Row="3" 
+                       />
+            
+            <TextBox x:Name="filmDescription" FontFamily="helvetica"  FontSize="17px"
+                          Foreground="White" Background="Transparent" BorderThickness="1.3" 
+                         Opacity="1" TextAlignment="Left"
+                         Padding="10,0,10,10" BorderBrush="#FA96F7" Grid.Row="3"
+                     Margin="10,35,10,5" >
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+        </Grid>
         <TextBlock TextWrapping="Wrap" Text="Detale filmu" Margin="25, 0 , 0 ,0" FontSize="40px" 
                    FontWeight="Black" Foreground="White"
                    />
-        <TextBlock TextWrapping="Wrap" Text="Detale filmu" Margin="25, 0 , 0 ,0" FontSize="10px" 
-                   FontWeight="Black" Foreground="White" Grid.Column="0" Grid.Row="1"
-                   />
-
-
-        
-
-
-
 
     </Grid>
 </Page>

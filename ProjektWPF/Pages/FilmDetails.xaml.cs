@@ -24,5 +24,13 @@ namespace ProjektWPF.Pages
         {
             InitializeComponent();
         }
+        public FilmDetails(string title, DateTime date, bool viewed, string descr)
+        {
+            InitializeComponent();
+            filmTitle.Text = title;
+            filmDate.SelectedDate = date;
+            filmViewed.IsChecked = viewed;
+            filmDescription.Text = descr;
+        }
     }
 }

@@ -50,7 +50,11 @@ namespace ProjektWPF.Pages
 
         private void doubleClickOnFilm(object sender, MouseButtonEventArgs e)
         {
+            Film selectedElement = filmsList.SelectedItem as Film;
+            FilmDetails filmDetails = new FilmDetails(selectedElement.Name, selectedElement.DateOfPremiere, selectedElement.Viewed, selectedElement.Description);
 
+            NavigationService navigationService = NavigationService.GetNavigationService(this);
+            navigationService.Navigate(filmDetails);
         }
     }
 }
