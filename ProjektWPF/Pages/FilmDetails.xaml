@@ -29,9 +29,9 @@
                    FontWeight="Black" Foreground="White" />
             <TextBox x:Name="filmTitle" FontFamily="helvetica"  FontSize="17px" Margin="10,5"
                           Foreground="White" Background="Transparent" BorderThickness="1.3" 
-                         Width="auto" Height="40" Opacity="1" HorizontalAlignment="Left"
+                         Width="200" Height="40" Opacity="1" HorizontalAlignment="Left"
                          VerticalAlignment="Bottom" TextAlignment="Left"
-                         Padding="8,10,10,10" BorderBrush="#FA96F7">
+                         Padding="8,10,10,10" BorderBrush="#FA96F7">             
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -40,11 +40,13 @@
             </TextBox>
             <Viewbox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
                      Width="160" Margin="10,5">
-                <DatePicker Background="Transparent" x:Name="filmDate" BorderThickness="1.3" BorderBrush="#FA96F7" >
+                <DatePicker Background="Transparent" x:Name="filmDate"
+                            BorderThickness="1.3" BorderBrush="#FA96F7" >
                     <DatePicker.Resources>                        
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="Background" Value="Transparent"  />
                             <Setter Property="Text" Value="----" />
+                            <Setter Property="TextAlignment" Value="Center" />
                         </Style>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="8"/>
@@ -100,7 +102,7 @@
             
             <TextBox x:Name="filmDescription" FontFamily="helvetica"  FontSize="17px"
                           Foreground="White" Background="Transparent" BorderThickness="1.3" 
-                         Opacity="1" TextAlignment="Left"
+                         Opacity="1" TextAlignment="Left" TextWrapping="Wrap"
                          Padding="10,0,10,10" BorderBrush="#FA96F7" Grid.Row="3"
                      Margin="10,35,10,5" >
                 <TextBox.Resources>
@@ -114,6 +116,10 @@
         <TextBlock TextWrapping="Wrap" Text="Detale filmu" Margin="25, 0 , 0 ,0" FontSize="40px" 
                    FontWeight="Black" Foreground="White"
                    />
+        <Button Name="deleteFilmButton" Content="Delete" Width="80" Height="40" Click="deleteFilm" HorizontalAlignment="Right"
+                Margin="0,0,20,0" Background="red" />
+        <Button Grid.Column="1" 
+                Content="Save" Width="80" Height="40" Click="saveAddFilm"/>
 
     </Grid>
 </Page>

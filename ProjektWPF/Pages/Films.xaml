@@ -11,6 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -18,13 +19,117 @@
         </Grid.ColumnDefinitions>
         <TextBlock TextWrapping="Wrap" Text="Lista filmów" Margin="25, 0 , 0 ,0" FontSize="40px" 
                    FontWeight="Black" Foreground="White"/>
+        <Button HorizontalAlignment="Right" Margin="0,0,30,0"
+                Content="Add" Width="80" Height="40" Click="addFilm"/>
+        
+        <StackPanel Orientation="Horizontal"  Grid.Row="1">
+                <TextBlock Text="Completed" VerticalAlignment="Center" Margin="10,0,0,0"
+                       FontWeight="Black" Foreground="White" FontSize="15px"/>
+            <Viewbox Width="20" Margin="10,0,0,0"
+                     VerticalAlignment="Center">
+                <CheckBox Width="auto" Height="auto" x:Name="viewCompletedFilmsCheckbox" 
+                          Checked="viewCompletedFilms" Unchecked="viewCompletedFilms" RenderTransformOrigin="1.667,1.667">
+                    <CheckBox.Resources>
+                        <SolidColorBrush x:Key="CheckBoxBackground" Color="Transparent" />
+                        <SolidColorBrush x:Key="CheckBoxBorder" Color="#C263DA" />
+                    </CheckBox.Resources>
+                    <CheckBox.Template>
+                        <ControlTemplate TargetType="CheckBox">
+                            <Grid Background="{StaticResource CheckBoxBackground}">
+                                <Border x:Name="PART_Border"
+                                            BorderBrush="{StaticResource CheckBoxBorder}" 
+                                            BorderThickness="3"
+                        Background="{TemplateBinding Background}" CornerRadius="1">
+                                    <Grid>
+                                        <Path x:Name="CheckMark" Visibility="Collapsed" Width="8" Height="8" 
+                              Data="M 0 4 L 4 8 L 8 0" Stroke="White" StrokeThickness="2" />
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+            </Viewbox>
+            <TextBlock Text="Pending" VerticalAlignment="Center" Margin="20,0,0,0"
+                       FontWeight="Black" Foreground="White" FontSize="15px"/>
+            <Viewbox Width="20" Margin="10,0,0,0"
+                     VerticalAlignment="Center">
+                <CheckBox Width="auto" Height="auto" x:Name="viewPendingFilmsCheckbox"
+                          Checked="viewPendingFilms" Unchecked="viewPendingFilms"
+>
+                    <CheckBox.Resources>
+                        <SolidColorBrush x:Key="CheckBoxBackground" Color="Transparent" />
+                        <SolidColorBrush x:Key="CheckBoxBorder" Color="#C263DA" />
+                    </CheckBox.Resources>
+                    <CheckBox.Template>
+                        <ControlTemplate TargetType="CheckBox">
+                            <Grid Background="{StaticResource CheckBoxBackground}">
+                                <Border x:Name="PART_Border"
+                                            BorderBrush="{StaticResource CheckBoxBorder}" 
+                                            BorderThickness="3"
+                        Background="{TemplateBinding Background}" CornerRadius="1">
+                                    <Grid>
+                                        <Path x:Name="CheckMark" Visibility="Collapsed" Width="8" Height="8" 
+                              Data="M 0 4 L 4 8 L 8 0" Stroke="White" StrokeThickness="2" />
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+            </Viewbox>
+            <TextBlock Text="Search" VerticalAlignment="Center" Margin="100,0,0,0" 
+                       FontWeight="Black" Foreground="White" FontSize="15px"/>
+            <TextBox x:Name="searchFilmInput" FontFamily="helvetica"  FontSize="17px" Margin="10,5"
+                          Foreground="White" Background="Transparent" BorderThickness="1.3" 
+                         Width="170" Height="40" Opacity="1" HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom" TextAlignment="Left"
+                         Padding="8,10,10,10" BorderBrush="#FA96F7" TextChanged="searchFilm">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+        </StackPanel>
 
         <DataGrid Name="filmsList" Background="{x:Null}" ItemsSource="{Binding}" 
                   AutoGenerateColumns="False" SelectionMode="Single"
-                  FontSize="15px" Grid.Row="1" Width="auto" 
-                 BorderThickness="2,4,2,1" BorderBrush="#FF6B6BD8"
-                     
-                  >
+                  FontSize="15px" Grid.Row="2" Width="auto" CanUserResizeRows="False"
+                 BorderThickness="2,4,2,1" BorderBrush="#FF6B6BD8" RowHeaderWidth="0"
+                  CanUserAddRows="False">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#8106AE"/>
+                    <Setter Property="Foreground" Value="white"/>
+                    <Setter Property="BorderBrush" Value="black"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                    <Setter Property="BorderBrush" Value="black"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="Foreground" Value="DarkBlue"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="" Binding="{Binding Viewed}" Width="20">
                     <DataGridCheckBoxColumn.CellStyle>
@@ -34,7 +139,7 @@
                         </Style>
                     </DataGridCheckBoxColumn.CellStyle>
                 </DataGridCheckBoxColumn>
-                <DataGridTextColumn Header="Tytuł" Binding="{Binding Name}"
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"
                                     IsReadOnly="True" Width="100" >
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
@@ -43,12 +148,13 @@
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
                 
-                <DataGridTextColumn Header="Opis" Binding="{Binding Description}" IsReadOnly="True" Width="300" />
-                <DataGridTextColumn Header="Data premiery"  Binding="{Binding DateOfPremiere}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" IsReadOnly="True" Width="400" />
+                <DataGridTextColumn Header="Premiere date" Width="*"
+                                    Binding="{Binding DateOfPremiere}" IsReadOnly="True"/>
             </DataGrid.Columns>
            
         </DataGrid>
- 
+
 
 
 

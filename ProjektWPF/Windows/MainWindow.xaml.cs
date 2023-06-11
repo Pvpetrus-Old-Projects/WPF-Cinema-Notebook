@@ -20,10 +20,11 @@ namespace ProjektWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int UserId { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            Films filmsPage = new Films();
+            Films filmsPage = new Films(UserId);
             mainFrame.Content = filmsPage;
         }
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
@@ -39,6 +40,12 @@ namespace ProjektWPF
             {
                 DragMove();
             }
+        }
+
+        private void showFilmsList(object sender, RoutedEventArgs e)
+        {
+            Films filmsPage = new Films(UserId);
+            mainFrame.Content = filmsPage;
         }
     }
 }

@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektWPF"
+        xmlns:local="clr-namespace:ProjektWPF" AllowsTransparency="True" Background="Transparent"
         mc:Ignorable="d"  WindowStyle="None" MouseDown="Window_MouseDown"
         Title="MainWindow" Height="550" Width="800">
-    <Grid>        
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -23,7 +23,7 @@
                 </LinearGradientBrush >
             </Border.Background>
         </Border>
-        <Frame Name="mainFrame" Grid.Row="1"/>
+        <Frame Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
         <Grid Grid.Column="1" Background="#404040">
             <Grid.RowDefinitions>
 
@@ -37,7 +37,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
-            <Button x:Name="Films"  Margin="15, 30" Grid.Column="2"  Content="Films"/>
+            <Button Click="showFilmsList" Margin="15, 30" Grid.Column="2"  Content="Films"/>
             <Button x:Name="Notes"  Margin="15, 30" Grid.Column="2" Grid.Row="1" Content="Notes"/>
             <Button x:Name="Showings"  Margin="15, 30" Grid.Row="2" Grid.Column="2" Content="Showings"/>
             <Button x:Name="Logout" Click="LogoutButton_Click" Margin="15, 30" Grid.Column="2" Grid.Row="3" Content="Logout"/>

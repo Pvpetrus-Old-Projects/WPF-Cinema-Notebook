@@ -51,6 +51,7 @@ namespace ProjektWPF
                 {
                     userFound = true;
                     mainWindow.Show();
+                    mainWindow.UserId = user.Id;
                     this.Close();
                 }
             }
