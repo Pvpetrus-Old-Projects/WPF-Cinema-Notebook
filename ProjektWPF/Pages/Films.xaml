@@ -123,34 +123,44 @@
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
-                    <Setter Property="Background" Value="LightBlue"/>
-                    <Setter Property="Foreground" Value="DarkBlue"/>
-                    <Setter Property="BorderBrush" Value="Gray"/>
-                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Background" Value="#FFB2FD"/>
+                    <Setter Property="BorderBrush" Value="#8106AE"/>
+                    <Setter Property="BorderThickness" Value="0.5"/>
                     <Setter Property="Padding" Value="5"/>
                 </Style>
             </DataGrid.CellStyle>
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="" Binding="{Binding Viewed}" Width="20">
                     <DataGridCheckBoxColumn.CellStyle>
-                        <Style>
+                        <Style TargetType="DataGridCell">
                             <EventSetter Event="CheckBox.Checked" Handler="OnChecked"/>
                             <EventSetter Event="CheckBox.Unchecked" Handler="OnChecked"/>
+                            <Setter Property="Background" Value="#FFB2FD"/>
+                            <Setter Property="BorderBrush" Value="#8106AE"/>
+                            <Setter Property="BorderThickness" Value="0.5"/>
+                            <Setter Property="Padding" Value="5"/>
                         </Style>
                     </DataGridCheckBoxColumn.CellStyle>
                 </DataGridCheckBoxColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"
-                                    IsReadOnly="True" Width="100" >
+                                    IsReadOnly="True" Width="180" >
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
+                            <Setter Property="Background" Value="#FFB2FD"/>
+                            <Setter Property="BorderBrush" Value="#8106AE"/>
+                            <Setter Property="BorderThickness" Value="0.5"/>
+                            <Setter Property="Padding" Value="5"/>
                             <EventSetter Event="PreviewMouseDoubleClick" Handler="doubleClickOnFilm"/>
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
                 
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}" IsReadOnly="True" Width="400" />
-                <DataGridTextColumn Header="Premiere date" Width="*"
-                                    Binding="{Binding DateOfPremiere}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" IsReadOnly="True" Width="300" />
+                <DataGridTextColumn Header="Premiere date" Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="DateOfPremiere" StringFormat="{}{0:d}" />
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
             </DataGrid.Columns>
            
         </DataGrid>
