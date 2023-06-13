@@ -120,6 +120,12 @@
     <Compile Include="Pages\Films.xaml.cs">
       <DependentUpon>Films.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Notes.xaml.cs">
+      <DependentUpon>Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NoteDetails.xaml.cs">
+      <DependentUpon>NoteDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Films.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Notes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NoteDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

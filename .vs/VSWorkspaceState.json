@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ProjektWPF",
-    "\\ProjektWPF\\Windows"
+    "\\ProjektWPF\\Pages"
   ],
-  "SelectedNode": "\\ProjektWPF\\Windows\\MainWindow.xaml",
-  "PreviewInSolutionExplorer": false
+  "SelectedNode": "\\ProjektWPF\\ProjektWPF.sln",
+  "PreviewInSolutionExplorer": true
 }

@@ -1,0 +1,80 @@
+﻿<Page x:Class="ProjektWPF.Pages.NoteDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjektWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NoteDetails">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="150" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock TextWrapping="Wrap" Text="Tytuł notatki:" Margin="10, 5, 300, 40"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" />
+            <TextBlock TextWrapping="Wrap" Text="Ocena:" Margin="490,6,100,50"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.892"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox x:Name="noteTitle" FontFamily="helvetica"  FontSize="17px" Margin="10,5"
+                          Foreground="White" Background="Transparent" BorderThickness="1.3" 
+                         Width="200" Height="40" Opacity="1" HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom" TextAlignment="Left"
+                         Padding="8,10,10,10" BorderBrush="#FA96F7">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <TextBlock Text="Tytuł filmu:" Margin="275,0,275,54"  Width="auto"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" Grid.Row="1" />
+
+            <TextBlock Text="Treść:" Margin="10, 0"  Width="auto"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" Grid.Row="2" />
+
+            <TextBox x:Name="noteText" FontFamily="helvetica"  FontSize="17px"
+                          Foreground="White" Background="Transparent" BorderThickness="1.3" 
+                         Opacity="1" TextAlignment="Left" TextWrapping="Wrap"
+                         Padding="10,0,10,10" BorderBrush="#FA96F7" Grid.Row="3"
+                     Margin="10,35,10,5" >
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+        </Grid>
+        <TextBlock TextWrapping="Wrap" Text="Detale notatki" Margin="25, 0 , 0 ,0" FontSize="40px" 
+                   FontWeight="Black" Foreground="White"
+                   />
+        <Button Name="deleteNoteButton" Content="Delete" Width="80" Height="40" Click="deleteNote" HorizontalAlignment="Right"
+                Margin="0,0,20,0" Background="red" />
+        <Button Grid.Column="1" 
+                Content="Save" Width="80" Height="40" Click="saveAddNote"/>
+
+    </Grid>
+</Page>

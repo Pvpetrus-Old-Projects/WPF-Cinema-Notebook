@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Release\
+G:\projekty\wpf\ProjektWPF\ProjektWPF\obj\Release\
 ProjektWPF
 none
 false
 TRACE
-C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\App.xaml
-5-184852863
-4-2028817800
-15-42680651
-21-1578045180
-ButtonTheme.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RegisterWindow.xaml;Windows\Window1.xaml;
+G:\projekty\wpf\ProjektWPF\ProjektWPF\App.xaml
+81770404405
+4-781647837
+18-1724411545
+21-1414458170
+ButtonTheme.xaml;Pages\FilmDetails.xaml;Pages\Films.xaml;Pages\Notes.xaml;Pages\NoteDetails.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RegisterWindow.xaml;
 
 True
 
