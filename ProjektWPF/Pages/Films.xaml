@@ -17,7 +17,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock TextWrapping="Wrap" Text="Lista filmów" Margin="25, 0 , 0 ,0" FontSize="40px" 
+        <TextBlock TextWrapping="Wrap" Text="Films list" Margin="25, 0 , 0 ,0" FontSize="40px" 
                    FontWeight="Black" Foreground="White"/>
         <Button HorizontalAlignment="Right" Margin="0,0,30,0"
                 Content="Add" Width="80" Height="40" Click="addFilm"/>

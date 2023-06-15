@@ -28,7 +28,7 @@
             <TextBox x:Name="searchNoteInput" FontFamily="helvetica"  FontSize="17px"
                           Foreground="White" Background="Transparent" BorderThickness="1.3"
                          Width="395" Height="40" Opacity="1" TextAlignment="Left"
-                         Padding="8,10,10,10" BorderBrush="#FA96F7" TextChanged="searchNote">
+                         Padding="8,10,10,10" BorderBrush="#FA96F7" >
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -65,8 +65,7 @@
 				<DataGridCheckBoxColumn Header="" Binding="{Binding Viewed}" Width="20">
 					<DataGridCheckBoxColumn.CellStyle>
 						<Style TargetType="DataGridCell">
-							<EventSetter Event="CheckBox.Checked" Handler="OnChecked"/>
-							<EventSetter Event="CheckBox.Unchecked" Handler="OnChecked"/>
+							
 							<Setter Property="Background" Value="#FFB2FD"/>
 							<Setter Property="BorderBrush" Value="#8106AE"/>
 							<Setter Property="BorderThickness" Value="0.5"/>

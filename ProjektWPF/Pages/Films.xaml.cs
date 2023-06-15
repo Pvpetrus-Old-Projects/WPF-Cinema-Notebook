@@ -55,7 +55,7 @@ namespace ProjektWPF.Pages
         {
             Film selectedElement = filmsList.SelectedItem as Film;
             FilmDetails filmDetails = new FilmDetails(selectedElement.Id, selectedElement.Name, selectedElement.DateOfPremiere, selectedElement.Viewed, selectedElement.Description);
-            filmDetails.UserId = UserId; //set user data
+            filmDetails.LoggedUserId = UserId; //set user data
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(filmDetails);            
         }
@@ -63,7 +63,7 @@ namespace ProjektWPF.Pages
         private void addFilm(object sender, RoutedEventArgs e)
         {
             FilmDetails filmDetails = new FilmDetails();
-            filmDetails.UserId = UserId;
+            filmDetails.LoggedUserId = UserId;
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(filmDetails);
         }

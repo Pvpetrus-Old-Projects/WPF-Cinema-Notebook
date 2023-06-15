@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjektWPF.Pages"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FilmDetails">
@@ -25,13 +26,13 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock TextWrapping="Wrap" Text="Tytuł:" Margin="10, 5, 300, 40"  FontSize="17px" 
-                   FontWeight="Black" Foreground="White" />
+            <TextBlock TextWrapping="Wrap" Text="Title:" Margin="10, 5, 300, 40"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" Width="auto" />
             <TextBox x:Name="filmTitle" FontFamily="helvetica"  FontSize="17px" Margin="10,5"
                           Foreground="White" Background="Transparent" BorderThickness="1.3" 
                          Width="200" Height="40" Opacity="1" HorizontalAlignment="Left"
                          VerticalAlignment="Bottom" TextAlignment="Left"
-                         Padding="8,10,10,10" BorderBrush="#FA96F7">             
+                         Padding="8,10,10,10" BorderBrush="#FA96F7">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -42,7 +43,7 @@
                      Width="160" Margin="10,5">
                 <DatePicker Background="Transparent" x:Name="filmDate"
                             BorderThickness="1.3" BorderBrush="#FA96F7" >
-                    <DatePicker.Resources>                        
+                    <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="Background" Value="Transparent"  />
                             <Setter Property="Text" Value="----" />
@@ -59,12 +60,42 @@
                     </DatePicker.Resources>
                 </DatePicker>
             </Viewbox>
-            <TextBlock Text="Data premiery:" Margin="10, 5, 300, 40"  FontSize="17px" 
+
+            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="7"
+                Content="Add" Width="30" Height="30" Click="addShowing" FontSize="10" />
+            
+            <Border Background="Transparent" BorderBrush="#FA96F7" BorderThickness="2" CornerRadius="8" Grid.Row="1" 
+                    Width="130" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,5,40,6"
+                    >
+                <xctk:DateTimePicker x:Name="showingDateAndTime" Format="Custom" FormatString="yyyy-MM-dd HH:mm" TextAlignment="Center"
+                         ShowButtonSpinner="False" Margin="4"  Width="auto" BorderBrush="White"
+                           Foreground="White" Background="Transparent"> 
+                    <xctk:DateTimePicker.Resources>
+                        <Style TargetType="xctk:ButtonChrome">
+                            <Setter Property="Background" Value="#FA96F7" />
+                        </Style>
+                    </xctk:DateTimePicker.Resources>
+                </xctk:DateTimePicker>
+            </Border>
+
+
+
+
+
+            <TextBlock Text="Premiere date:" Margin="10, 5, 300, 40"  FontSize="17px" 
                    FontWeight="Black" Foreground="White" Grid.Row="1" />
+            <TextBlock Text="Add showing:" FontSize="17px" Margin="0,5,40,0"
+                   FontWeight="Black" Foreground="White" Grid.Row="1" HorizontalAlignment="Right" Height="35" VerticalAlignment="Top"/>
             <TextBlock FontSize="17px" Margin="10, 5"
-                   FontWeight="Black" Foreground="White" Grid.Row="2" Text="Obejrzany:"
+                   FontWeight="Black" Foreground="White" Grid.Row="2"  Text="Viewed:"
                        Width="auto">
             </TextBlock>
+            <Grid Grid.Row="2" >
+                <Border x:Name="validationBorder" Visibility="Collapsed" Background="red" CornerRadius="8" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="validationBox" TextWrapping="Wrap" FontSize="13px" Foreground="white"/>
+                </Border>
+            </Grid>
+
             <Viewbox Grid.Row="2" Width="25" Margin="110,7,4,15" 
                      VerticalAlignment="Top" HorizontalAlignment="Left">
                 <CheckBox Width="auto" Height="auto" x:Name="filmViewed">
@@ -96,10 +127,10 @@
                 </CheckBox>
             </Viewbox>
 
-            <TextBlock Text="Opis:" Margin="10, 0"  Width="auto"  FontSize="17px" 
+            <TextBlock Text="Description:" Margin="10, 0"  Width="auto"  FontSize="17px" 
                    FontWeight="Black" Foreground="White" Grid.Row="3" 
                        />
-            
+
             <TextBox x:Name="filmDescription" FontFamily="helvetica"  FontSize="17px"
                           Foreground="White" Background="Transparent" BorderThickness="1.3" 
                          Opacity="1" TextAlignment="Left" TextWrapping="Wrap"
@@ -113,7 +144,7 @@
             </TextBox>
 
         </Grid>
-        <TextBlock TextWrapping="Wrap" Text="Detale filmu" Margin="25, 0 , 0 ,0" FontSize="40px" 
+        <TextBlock TextWrapping="Wrap" Text="Film details" Margin="25, 0 , 0 ,0" FontSize="40px" 
                    FontWeight="Black" Foreground="White"
                    />
         <Button Name="deleteFilmButton" Content="Delete" Width="80" Height="40" Click="deleteFilm" HorizontalAlignment="Right"
@@ -121,5 +152,20 @@
         <Button Grid.Column="1" 
                 Content="Save" Width="80" Height="40" Click="saveAddFilm"/>
 
+        <Border  Background="Transparent" CornerRadius="8" Padding="5" Width="auto" Height="280" VerticalAlignment="Top"
+                  Grid.Column="2" Grid.Row="1" Grid.RowSpan="4" BorderBrush="#FA96F7" BorderThickness="2">
+
+            <ListBox x:Name="showingsListBox" Background="Transparent" ItemsSource="{Binding showingsList}"
+                     Foreground="White" BorderThickness="0" HorizontalContentAlignment="Center" MouseDoubleClick="deleteShowing" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="BorderBrush" Value="Violet"/>
+                        <Setter Property="BorderThickness" Value="0.5"/>
+                    </Style>                    
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </Border>
     </Grid>
 </Page>

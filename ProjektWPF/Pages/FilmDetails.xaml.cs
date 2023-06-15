@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,21 +22,26 @@ namespace ProjektWPF.Pages
     /// </summary>
     public partial class FilmDetails : Page
     {
-        int filmId;
         ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
         private List<Film> filmsL;
         Film film;
-        public int UserId { get; set; }
+        public int LoggedUserId { get; set; }
+        public ObservableCollection<string> showingsList { get; set; }
         string mode;
         public FilmDetails()
         {
-            mode="creation";
+            DataContext = this;         //set data context and create list
+            showingsList = new ObservableCollection<string> {};
+
+            mode ="creation";
             InitializeComponent();
             film = new Film();
             deleteFilmButton.Visibility = Visibility.Collapsed; //delete button not needed if the film is being added
         }
         public FilmDetails(int id,string title, DateTime date, bool viewed, string descr)
         {
+            DataContext = this;
+            showingsList = new ObservableCollection<string> { };
             mode = "edition";
             InitializeComponent();
             deleteFilmButton.Visibility = Visibility.Visible;
@@ -48,37 +55,71 @@ namespace ProjektWPF.Pages
 
         private void saveAddFilm(object sender, RoutedEventArgs e)
         {
-            film.Name = filmTitle.Text; //get values of changed data
-            film.DateOfPremiere = (DateTime)filmDate.SelectedDate;
+            bool validData = true;
+            string message = "";
+            DateTime parsedDate;
+            film.Description = filmDescription.Text; //it can be null
             film.Viewed = (bool)filmViewed.IsChecked;
-            film.Description = filmDescription.Text;
 
-            if (mode == "edition")
+            if (DateTime.TryParse(filmDate.SelectedDate.ToString(), out parsedDate))
+                film.DateOfPremiere = parsedDate; //parse data and check if its valid;
+            else
+            {
+                message = "Date format is invalid";
+                validData = false;
+            }
+
+            if (filmTitle.Text.Length > 1)
+                film.Name = filmTitle.Text; //get values of changed data
+            else
+            {
+                message = "Title is too short";
+                validData = false;
+            }
+
+            if (mode == "edition" && validData)
             {
                 try
                 {
                     db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }  
-            else
-            { 
-                film.UserId = UserId;
-
-                try
-                {
-                    db.Film.Add(film);
-                    db.SaveChanges();
+                    switchToFilmsList();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            switchToFilmsList();
+            else if (validData)
+            {
+                film.UserId = LoggedUserId;
+                FilmViewing filmView;
+                try
+                {
+                    db.Film.Add(film);                    
+                    db.SaveChanges();  //do this again below since id is auto incremented
+                    foreach (string showing in showingsList)
+                    {
+                        filmView = new FilmViewing()
+                        {
+                            FilmId = film.Id,
+                            UserId = LoggedUserId,
+                            DateOfViewing = DateTime.Parse(showing),
+                        };
+                        db.FilmViewing.Add(filmView);
+                    }
+                    db.SaveChanges();
+                    switchToFilmsList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                validationBorder.Visibility = Visibility.Visible;
+                validationBox.Text = message;
+            }
         }
 
         private void deleteFilm(object sender, RoutedEventArgs e)
@@ -97,9 +138,25 @@ namespace ProjektWPF.Pages
 
         private void switchToFilmsList()
         {
-            Films filmsList = new Films(UserId);  //we have to create a new page to refresh the list
+            Films filmsList = new Films(LoggedUserId);  //we have to create a new page to refresh the list
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(filmsList);
+        }
+
+        private void addShowing(object sender, RoutedEventArgs e)
+        {
+            if(showingsList.Count<5)
+                showingsList.Add(showingDateAndTime.Text);
+        }
+
+        private void deleteShowing(object sender, MouseButtonEventArgs e)
+        {
+            for (int i = showingsList.Count - 1; i >= 0; i--)
+                if (showingsList[i] == showingsListBox.SelectedItem.ToString())
+                {
+                    showingsList.RemoveAt(i);
+                    break;  //delete only one element when found
+                }
         }
     }
 }

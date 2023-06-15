@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\projekty\wpf\ProjektWPF\ProjektWPF\obj\Debug\
+C:\Users\BR\Desktop\WPF\GOWNO\ProjektWPF\obj\Debug\
 ProjektWPF
 none
 false
 DEBUG;TRACE
-G:\projekty\wpf\ProjektWPF\ProjektWPF\App.xaml
+C:\Users\BR\Desktop\WPF\GOWNO\ProjektWPF\App.xaml
 81770404405
 4-781647837
 18-1724411545
-21-1414458170
+26677291064
 ButtonTheme.xaml;Pages\FilmDetails.xaml;Pages\Films.xaml;Pages\Notes.xaml;Pages\NoteDetails.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\RegisterWindow.xaml;
 
-True
+False
 

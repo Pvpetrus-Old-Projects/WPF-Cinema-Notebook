@@ -64,6 +64,9 @@ namespace ProjektWPF.Pages
         private void notesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }private void OnChecked(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

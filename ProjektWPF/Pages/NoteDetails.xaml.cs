@@ -94,5 +94,15 @@ namespace ProjektWPF.Pages
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(notesList);
         }
+
+        private void deleteNote(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void saveAddNote(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
