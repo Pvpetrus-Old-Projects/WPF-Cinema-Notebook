@@ -38,7 +38,7 @@ namespace ProjektWPF
 
 
             ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
-            MainWindow mainWindow = new MainWindow();
+            MainWindow mainWindow;
             var registeredUsers = from u in db.User select u;
 
 
@@ -49,9 +49,9 @@ namespace ProjektWPF
             {
                 if(username.Equals(user.Username) && password.Equals(user.Password))
                 {
+                    mainWindow = new MainWindow(user.Id);
                     userFound = true;
                     mainWindow.Show();
-                    mainWindow.UserId = user.Id;
                     this.Close();
                 }
             }

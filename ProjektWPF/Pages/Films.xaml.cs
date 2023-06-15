@@ -26,10 +26,10 @@ namespace ProjektWPF.Pages
 
         public Films(int userId)
         {
-            InitializeComponent();
-            filmsL = db.Film.ToList();       
-            filmsList.DataContext = filmsL;
             UserId = userId;
+            InitializeComponent();
+            filmsL = db.Film.Where(f => f.UserId == UserId).ToList();
+            filmsList.DataContext = filmsL;
         }
         void OnChecked(object sender, RoutedEventArgs e)
         {

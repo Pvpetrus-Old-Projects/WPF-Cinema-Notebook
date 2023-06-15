@@ -21,8 +21,9 @@ namespace ProjektWPF
     public partial class MainWindow : Window
     {
         public int UserId { get; set; }
-        public MainWindow()
+        public MainWindow(int id)
         {
+            UserId = id;
             InitializeComponent();
             Films filmsPage = new Films(UserId);
             mainFrame.Content = filmsPage;
