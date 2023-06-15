@@ -93,8 +93,6 @@ namespace ProjektWPF.Pages
             {
                 film.UserId = LoggedUserId;
                 FilmViewing filmView;
-                try
-                {
                     db.Film.Add(film);                    
                     db.SaveChanges();  //do this again below since id is auto incremented
                     foreach (string showing in showingsList)
@@ -109,11 +107,7 @@ namespace ProjektWPF.Pages
                     }
                     db.SaveChanges();
                     switchToFilmsList();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                    
             }
             else
             {
