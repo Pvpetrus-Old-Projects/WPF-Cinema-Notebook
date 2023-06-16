@@ -32,16 +32,16 @@ namespace ProjektWPF.Pages
         public FilmDetails()
         {
             InitializeComponent();
-            DataContext = this;         //set data context and create list
+            filmsViewingsL = new ObservableCollection<FilmViewing>();
             mode = "creation";
             film = new Film();
             deleteFilmButton.Visibility = Visibility.Collapsed; //delete button not needed if the film is being added
+            loadVar();
         }
         public FilmDetails(int id, string title, DateTime date, bool viewed, string descr)
         {
             InitializeComponent();
             filmsViewingsL = new ObservableCollection<FilmViewing>(db.FilmViewing.Where(item => item.FilmId == id));
-            showingsListBox.ItemsSource = filmsViewingsL;
             mode = "edition";
             deleteFilmButton.Visibility = Visibility.Visible;
             filmTitle.Text = title;     //set film data to UI
@@ -50,6 +50,12 @@ namespace ProjektWPF.Pages
             filmDescription.Text = descr;
             filmsL = db.Film.ToList();
             film = filmsL.Find(el => el.Id == id);
+            loadVar();
+        }
+
+        private  void loadVar()
+        {
+            showingsListBox.ItemsSource = filmsViewingsL;
             DataContext = this;
         }
 
@@ -92,22 +98,10 @@ namespace ProjektWPF.Pages
             else if (validData)
             {
                 film.UserId = LoggedUserId;
-                FilmViewing filmView;
                 db.Film.Add(film);
                 db.SaveChanges();  //do this again below since id is auto incremented
-                /*foreach (string showing in showingsList)
-                {
-                    filmView = new FilmViewing()
-                    {
-                        FilmId = film.Id,
-                        UserId = LoggedUserId,
-                        DateOfViewing = DateTime.Parse(showing),
-                    };
-                    db.FilmViewing.Add(filmView);
-                }*/
-                //db.SaveChanges();
+                                   
                 switchToFilmsList();
-
             }
             else
             {
@@ -127,6 +121,7 @@ namespace ProjektWPF.Pages
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
             switchToFilmsList();
         }
 
@@ -140,17 +135,20 @@ namespace ProjektWPF.Pages
         private void addShowing(object sender, RoutedEventArgs e)
         {
             FilmViewing newFilmViewing;
-            if (filmsViewingsL.Count < 5)
-            {
-                newFilmViewing = new FilmViewing()
+            DateTime localDateTime;
+            if (DateTime.TryParse(showingDateAndTime.Text, out localDateTime))
                 {
-                    FilmId = film.Id,
-                    DateOfViewing = DateTime.Parse(showingDateAndTime.Text),
-                };
+                if (filmsViewingsL.Count < 5)
+                {
+                    newFilmViewing = new FilmViewing()
+                    {
+                        FilmId = film.Id,
+                        DateOfViewing = localDateTime,
+                    };
 
-                filmsViewingsL.Add(newFilmViewing);
-                db.FilmViewing.Add(newFilmViewing);
-
+                    filmsViewingsL.Add(newFilmViewing);
+                    db.FilmViewing.Add(newFilmViewing);
+                }                
             }
         }
 

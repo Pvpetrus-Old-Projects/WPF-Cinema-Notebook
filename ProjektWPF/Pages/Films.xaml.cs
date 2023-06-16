@@ -28,7 +28,7 @@ namespace ProjektWPF.Pages
         {
             UserId = userId;
             InitializeComponent();
-            filmsL = db.Film.Where(f => f.UserId == UserId).ToList();
+            filmsL = db.Film.Where(item => item.UserId == UserId).ToList();
             filmsList.DataContext = filmsL;
         }
         void OnChecked(object sender, RoutedEventArgs e)
