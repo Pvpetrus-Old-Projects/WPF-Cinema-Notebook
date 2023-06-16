@@ -61,11 +61,25 @@
             <TextBlock Text="Tytuł filmu:" Margin="275,0,275,54"  Width="auto"  FontSize="17px" 
                    FontWeight="Black" Foreground="White" Grid.Row="1" />
 
-            <ComboBox x:Name="noteFilmTitle" FontFamily="helvetica"  FontSize="17px" Margin="0,30,0,0"
-                         Foreground="White" Background="Black" BorderThickness="1.3"
-                         Width="200" Height="40" Opacity="1" VerticalAlignment="Top"
-                         Padding="8,10,10,10" BorderBrush="#FA96F7"
+            <ComboBox x:Name="noteFilmTitle"
                          Grid.Row="1" ItemsSource="{Binding}" SelectedValuePath="FilmId" DisplayMemberPath="Name">
+                <ComboBox.Resources>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="BorderThickness" Value="1.3" />
+                        <Setter Property="BorderBrush" Value="#FA96F7" />
+                        <Setter Property="Background" Value="Black"/>
+                        <Setter Property="Opacity" Value="1"/>
+                        <Setter Property="Padding" Value="5" />
+                        <Setter Property="FontSize" Value="12" />
+                        <Setter Property="Width" Value="150" />
+                        <Setter Property="Height" Value="30" />
+                    </Style>
+
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="Background" Value="Black" />
+                    </Style>
+                </ComboBox.Resources>
             </ComboBox>
 
             <TextBlock Text="Content:" Margin="10, 0"  Width="auto" TextAlignment="Center" FontSize="17px" 
