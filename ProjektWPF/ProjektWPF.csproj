@@ -124,6 +124,9 @@
     <Compile Include="Pages\NoteDetails.xaml.cs">
       <DependentUpon>NoteDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Showings.xaml.cs">
+      <DependentUpon>Showings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -148,6 +151,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\NoteDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Showings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

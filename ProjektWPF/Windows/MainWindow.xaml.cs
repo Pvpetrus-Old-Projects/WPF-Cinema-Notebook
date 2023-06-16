@@ -48,5 +48,15 @@ namespace ProjektWPF
             Films filmsPage = new Films(UserId);
             mainFrame.Content = filmsPage;
         }
+        private void showNotesList(object sender, RoutedEventArgs e)
+        {
+            Notes notesPage = new Notes(UserId);
+            mainFrame.Content = notesPage;
+        }
+        private void showShowingsList(object sender, RoutedEventArgs e)
+        {
+            Showings showingsPage = new Showings(UserId);
+            mainFrame.Content = showingsPage;
+        }
     }
 }

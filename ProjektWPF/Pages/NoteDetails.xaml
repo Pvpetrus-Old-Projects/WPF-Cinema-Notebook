@@ -15,28 +15,25 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
-
+        <Grid Grid.Row="2">
+            <Border x:Name="validationBorder" Visibility="Collapsed" Background="red" CornerRadius="8" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="validationBox" TextWrapping="Wrap" FontSize="13px" Foreground="white"/>
+            </Border>
+        </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock TextWrapping="Wrap" Text="Tytuł notatki:" Margin="10, 5, 300, 40"  FontSize="17px" 
-                   FontWeight="Black" Foreground="White" />
-            <TextBlock TextWrapping="Wrap" Text="Ocena:" Margin="490,6,100,50"  FontSize="17px" 
-                   FontWeight="Black" Foreground="White" RenderTransformOrigin="0.5,0.5" >
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.892"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Text="Note title:" Margin="50,5"  FontSize="17px" 
+                   FontWeight="Black" Foreground="White" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Rating:" Margin="455,9,80,47"  FontSize="17px"
+                   FontWeight="Black" Foreground="White" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="/10" Margin="493,30,-10,7" FontSize="35px" 
+                   FontWeight="Black" Foreground="White" Grid.Row="0"/>
+
             <TextBox x:Name="noteTitle" FontFamily="helvetica"  FontSize="17px" Margin="10,5"
                           Foreground="White" Background="Transparent" BorderThickness="1.3" 
                          Width="200" Height="40" Opacity="1" HorizontalAlignment="Left"
@@ -49,10 +46,29 @@
                 </TextBox.Resources>
             </TextBox>
 
+            <TextBox x:Name="noteRating" FontFamily="helvetica"  FontSize="17px" Margin="405,0,0,2"
+                          Foreground="White" Background="Transparent" BorderThickness="1.3" 
+                         Width="84" Height="40" Opacity="1" HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom" TextAlignment="Left"
+                         Padding="8,10,10,10" BorderBrush="#FA96F7">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <TextBlock Text="Tytuł filmu:" Margin="275,0,275,54"  Width="auto"  FontSize="17px" 
                    FontWeight="Black" Foreground="White" Grid.Row="1" />
 
-            <TextBlock Text="Treść:" Margin="10, 0"  Width="auto"  FontSize="17px" 
+            <ComboBox x:Name="noteFilmTitle" FontFamily="helvetica"  FontSize="17px" Margin="0,30,0,0"
+                         Foreground="White" Background="Black" BorderThickness="1.3"
+                         Width="200" Height="40" Opacity="1" VerticalAlignment="Top"
+                         Padding="8,10,10,10" BorderBrush="#FA96F7"
+                         Grid.Row="1" ItemsSource="{Binding}" SelectedValuePath="FilmId" DisplayMemberPath="Name">
+            </ComboBox>
+
+            <TextBlock Text="Content:" Margin="10, 0"  Width="auto" TextAlignment="Center" FontSize="17px" 
                    FontWeight="Black" Foreground="White" Grid.Row="2" />
 
             <TextBox x:Name="noteText" FontFamily="helvetica"  FontSize="17px"
@@ -68,13 +84,13 @@
             </TextBox>
 
         </Grid>
-        <TextBlock TextWrapping="Wrap" Text="Detale notatki" Margin="25, 0 , 0 ,0" FontSize="40px" 
+        <TextBlock TextWrapping="Wrap" Text="Note details" Margin="25, 0 , 0 ,0" FontSize="40px" 
                    FontWeight="Black" Foreground="White"
                    />
-        <Button Name="deleteNoteButton" Content="Delete" Width="80" Height="40" Click="deleteNote" HorizontalAlignment="Right"
-                Margin="0,0,20,0" Background="red" />
-        <Button Grid.Column="1" 
-                Content="Save" Width="80" Height="40" Click="saveAddNote"/>
+        <Button Name="deleteNoteButton" Content="Delete" Width="80" Height="40" Click="deleteNote" HorizontalAlignment="Left"
+                Margin="450,15,0,15" Background="red" />
+        <Button 
+                Content="Save" Width="80" Height="40" Click="saveAddNote" Margin="570,15,0,15"/>
 
     </Grid>
 </Page>

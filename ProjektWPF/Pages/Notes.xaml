@@ -17,7 +17,7 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition />
 		</Grid.ColumnDefinitions>
-		<TextBlock TextWrapping="Wrap" Text="Lista notatek" Margin="25, 0 , 0 ,0" FontSize="40px"
+		<TextBlock TextWrapping="Wrap" Text="Notes list" Margin="25, 0 , 0 ,0" FontSize="40px"
                    FontWeight="Black" Foreground="White"/>
 		<Button HorizontalAlignment="Right" Margin="0,0,30,0"
                 Content="Add" Width="80" Height="40" Click="addNote"/>
@@ -28,7 +28,7 @@
             <TextBox x:Name="searchNoteInput" FontFamily="helvetica"  FontSize="17px"
                           Foreground="White" Background="Transparent" BorderThickness="1.3"
                          Width="395" Height="40" Opacity="1" TextAlignment="Left"
-                         Padding="8,10,10,10" BorderBrush="#FA96F7" >
+                         Padding="8,10,10,10" BorderBrush="#FA96F7" TextChanged="searchNoteInput_TextChanged" >
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -38,12 +38,12 @@
 
         </StackPanel>
 
-		<DataGrid Name="notesList" Background="{x:Null}" ItemsSource="{Binding}"
+        <DataGrid Name="notesList" Background="{x:Null}" ItemsSource="{Binding}" 
                   AutoGenerateColumns="False" SelectionMode="Single"
                   FontSize="15px" Grid.Row="2" Width="auto" CanUserResizeRows="False"
                  BorderThickness="2,4,2,1" BorderBrush="#FF6B6BD8" RowHeaderWidth="0"
-                  CanUserAddRows="False" SelectionChanged="notesList_SelectionChanged">
-			<DataGrid.ColumnHeaderStyle>
+                  CanUserAddRows="False">
+            <DataGrid.ColumnHeaderStyle>
 				<Style TargetType="DataGridColumnHeader">
 					<Setter Property="Background" Value="#8106AE"/>
 					<Setter Property="Foreground" Value="white"/>
@@ -61,19 +61,8 @@
 					<Setter Property="Padding" Value="5"/>
 				</Style>
 			</DataGrid.CellStyle>
-			<DataGrid.Columns>
-				<DataGridCheckBoxColumn Header="" Binding="{Binding Viewed}" Width="20">
-					<DataGridCheckBoxColumn.CellStyle>
-						<Style TargetType="DataGridCell">
-							
-							<Setter Property="Background" Value="#FFB2FD"/>
-							<Setter Property="BorderBrush" Value="#8106AE"/>
-							<Setter Property="BorderThickness" Value="0.5"/>
-							<Setter Property="Padding" Value="5"/>
-						</Style>
-					</DataGridCheckBoxColumn.CellStyle>
-				</DataGridCheckBoxColumn>
-				<DataGridTextColumn Header="Nazwa" Binding="{Binding Name}"
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding NoteTitle}"
                                     IsReadOnly="True" Width="180" >
 					<DataGridTextColumn.CellStyle>
 						<Style TargetType="DataGridCell">
@@ -81,14 +70,15 @@
 							<Setter Property="BorderBrush" Value="#8106AE"/>
 							<Setter Property="BorderThickness" Value="0.5"/>
 							<Setter Property="Padding" Value="5"/>
-							<EventSetter Event="PreviewMouseDoubleClick" Handler="doubleClickOnNote"/>
-						</Style>
+                            <EventSetter Event="PreviewMouseDoubleClick" Handler="doubleClickOnNote"/>
+                        </Style>
 					</DataGridTextColumn.CellStyle>
 				</DataGridTextColumn>
-                <DataGridTextColumn Header="Film" Binding="{Binding Film}" IsReadOnly="True" Width="300" />
-                <DataGridTextColumn Header="Data stworzenia" Width="*" IsReadOnly="True">
+                <DataGridTextColumn Header="Film" Binding="{Binding Film.Name}" IsReadOnly="True" Width="300" />
+                <DataGridTextColumn Header="Rating" Binding="{Binding Rating}" IsReadOnly="True" Width="70" />
+                <DataGridTextColumn Header="Created" Width="*" IsReadOnly="True">
 					<DataGridTextColumn.Binding>
-						<Binding Path="DateCreated" StringFormat="{}{0:d}" />
+						<Binding Path="DateOfCreation" StringFormat="{}{0:d}" />
 					</DataGridTextColumn.Binding>
 				</DataGridTextColumn>
 			</DataGrid.Columns>

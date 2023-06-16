@@ -38,8 +38,8 @@
             </Grid.ColumnDefinitions>
             
             <Button Click="showFilmsList" Margin="15, 30" Grid.Column="2"  Content="Films"/>
-            <Button x:Name="Notes"  Margin="15, 30" Grid.Column="2" Grid.Row="1" Content="Notes"/>
-            <Button x:Name="Showings"  Margin="15, 30" Grid.Row="2" Grid.Column="2" Content="Showings"/>
+            <Button Click="showNotesList"  Margin="15, 30" Grid.Column="2" Grid.Row="1" Content="Notes"/>
+            <Button Click="showShowingsList"  Margin="15, 30" Grid.Row="2" Grid.Column="2" Content="Showings"/>
             <Button x:Name="Logout" Click="LogoutButton_Click" Margin="15, 30" Grid.Column="2" Grid.Row="3" Content="Logout"/>
 
         </Grid>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,7 +17,7 @@ using System.Windows.Shapes;
 namespace ProjektWPF.Pages
 {
     /// <summary>
-    /// Interaction logic for Films.xaml
+    /// Interaction logic for Notes.xaml
     /// </summary>
     public partial class Notes : Page
     {
@@ -28,15 +29,15 @@ namespace ProjektWPF.Pages
         {
             InitializeComponent();
             notesL = db.Note.ToList();
-            notesList.DataContext = notesL;
+            notesList.DataContext = notesL; 
             UserId = userId;
         }
 
         private void doubleClickOnNote(object sender, MouseButtonEventArgs e)
         {
             Note selectedElement = notesList.SelectedItem as Note;
-            NoteDetails noteDetails = new NoteDetails(); // ND
-            noteDetails.UserId = UserId; //set user data
+            NoteDetails noteDetails = new NoteDetails(selectedElement.FilmId, selectedElement.NoteTitle, selectedElement.Rating, selectedElement.Text);
+            noteDetails.LoggedUserId = UserId; //set user data
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(noteDetails);
         }
@@ -44,7 +45,7 @@ namespace ProjektWPF.Pages
         private void addNote(object sender, RoutedEventArgs e)
         {
             NoteDetails notesDetails = new NoteDetails();
-            notesDetails.UserId = UserId; // ND
+            notesDetails.LoggedUserId = UserId;
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(notesDetails);
         }
@@ -54,19 +55,11 @@ namespace ProjektWPF.Pages
             notesList.DataContext = notesL;
         }
 
-        private void searchFilm(object sender, TextChangedEventArgs e)
+        private void searchNoteInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (searchNoteInput.Text.Length > 1)
-                notesList.DataContext = notesL.Where(el => el.NoteTitle.ToLower().Contains(searchNoteInput.Text)).ToList();
+            if (searchNoteInput.Text.Length > 0)
+            notesList.DataContext = notesL.Where(el => el.NoteTitle.ToLower().Contains(searchNoteInput.Text)).ToList();
             else displayAllNotes();
-        }
-
-        private void notesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }private void OnChecked(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
