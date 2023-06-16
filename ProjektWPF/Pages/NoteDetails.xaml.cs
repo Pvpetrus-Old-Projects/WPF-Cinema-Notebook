@@ -71,7 +71,6 @@ namespace ProjektWPF.Pages
             if (noteRating.Text.Length > 0)
                 try {
                     note.Rating = Int16.Parse(noteRating.Text);
-
                 }
                 catch (Exception ex)
                 {
@@ -82,7 +81,7 @@ namespace ProjektWPF.Pages
                 message = "Fill rating";
                 validData = false;
             }
-            if(note.Rating <0 && note.Rating>10)
+            if(note.Rating <0 || note.Rating>10)
             {
                 message = "Rating is incorrect";
                 validData = false;
