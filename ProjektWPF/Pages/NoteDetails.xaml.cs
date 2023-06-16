@@ -20,7 +20,7 @@ namespace ProjektWPF.Pages
     /// </summary>
     public partial class NoteDetails : Page
     {
-        ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+        Model1 db = new Model1();
         private List<Note> notesL;
         Note note;
         public int UserId { get; set; }
@@ -59,8 +59,8 @@ namespace ProjektWPF.Pages
             }
             else
             {
-                note.UserId = UserId;
-
+/*                note.UserId = UserId;
+*/
                 try
                 {
                     db.Note.Add(note);

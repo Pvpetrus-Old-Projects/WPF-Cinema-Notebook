@@ -20,7 +20,7 @@ namespace ProjektWPF.Pages
     /// </summary>
     public partial class Notes : Page
     {
-        ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+        Model1 db = new Model1();
         private List<Note> notesL;
         public int UserId { get; set; }
 

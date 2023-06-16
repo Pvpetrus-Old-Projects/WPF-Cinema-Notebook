@@ -108,27 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DatabaseModels.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseModels.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModels.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Film.cs">
-      <DependentUpon>DatabaseModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FilmViewing.cs">
-      <DependentUpon>DatabaseModels.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Film.cs" />
+    <Compile Include="FilmViewing.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="Note.cs" />
     <Compile Include="Pages\FilmDetails.xaml.cs">
       <DependentUpon>FilmDetails.xaml</DependentUpon>
     </Compile>
@@ -141,17 +124,12 @@
     <Compile Include="Pages\NoteDetails.xaml.cs">
       <DependentUpon>NoteDetails.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Note.cs">
-      <DependentUpon>DatabaseModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>DatabaseModels.tt</DependentUpon>
     </Compile>
     <Page Include="ButtonTheme.xaml">
       <SubType>Designer</SubType>
@@ -212,13 +190,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DatabaseModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DatabaseModels.edmx.diagram">
-      <DependentUpon>DatabaseModels.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -244,16 +215,6 @@
     <Content Include="ApplicationDatabase_log.ldf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>ApplicationDatabase.mdf</DependentUpon>
-    </Content>
-    <Content Include="DatabaseModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseModels.edmx</DependentUpon>
-      <LastGenOutput>DatabaseModels.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DatabaseModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseModels.edmx</DependentUpon>
-      <LastGenOutput>DatabaseModels.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

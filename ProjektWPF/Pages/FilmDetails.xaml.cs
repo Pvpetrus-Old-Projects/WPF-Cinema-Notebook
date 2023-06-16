@@ -22,28 +22,27 @@ namespace ProjektWPF.Pages
     /// </summary>
     public partial class FilmDetails : Page
     {
-        ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+        Model1 db = new Model1();
         private List<Film> filmsL;
+        private ObservableCollection<FilmViewing> filmsViewingsL = new ObservableCollection<FilmViewing>();
+
         Film film;
         public int LoggedUserId { get; set; }
-        public ObservableCollection<string> showingsList { get; set; }
         string mode;
         public FilmDetails()
         {
-            DataContext = this;         //set data context and create list
-            showingsList = new ObservableCollection<string> {};
-
-            mode ="creation";
             InitializeComponent();
+            DataContext = this;         //set data context and create list
+            mode = "creation";
             film = new Film();
             deleteFilmButton.Visibility = Visibility.Collapsed; //delete button not needed if the film is being added
         }
-        public FilmDetails(int id,string title, DateTime date, bool viewed, string descr)
+        public FilmDetails(int id, string title, DateTime date, bool viewed, string descr)
         {
-            DataContext = this;
-            showingsList = new ObservableCollection<string> { };
-            mode = "edition";
             InitializeComponent();
+            filmsViewingsL = new ObservableCollection<FilmViewing>(db.FilmViewing.Where(item => item.FilmId == id));
+            showingsListBox.ItemsSource = filmsViewingsL;
+            mode = "edition";
             deleteFilmButton.Visibility = Visibility.Visible;
             filmTitle.Text = title;     //set film data to UI
             filmDate.SelectedDate = date;
@@ -51,6 +50,7 @@ namespace ProjektWPF.Pages
             filmDescription.Text = descr;
             filmsL = db.Film.ToList();
             film = filmsL.Find(el => el.Id == id);
+            DataContext = this;
         }
 
         private void saveAddFilm(object sender, RoutedEventArgs e)
@@ -93,21 +93,21 @@ namespace ProjektWPF.Pages
             {
                 film.UserId = LoggedUserId;
                 FilmViewing filmView;
-                    db.Film.Add(film);                    
-                    db.SaveChanges();  //do this again below since id is auto incremented
-                    foreach (string showing in showingsList)
+                db.Film.Add(film);
+                db.SaveChanges();  //do this again below since id is auto incremented
+                /*foreach (string showing in showingsList)
+                {
+                    filmView = new FilmViewing()
                     {
-                        filmView = new FilmViewing()
-                        {
-                            FilmId = film.Id,
-                            UserId = LoggedUserId,
-                            DateOfViewing = DateTime.Parse(showing),
-                        };
-                        db.FilmViewing.Add(filmView);
-                    }
-                    db.SaveChanges();
-                    switchToFilmsList();
-                    
+                        FilmId = film.Id,
+                        UserId = LoggedUserId,
+                        DateOfViewing = DateTime.Parse(showing),
+                    };
+                    db.FilmViewing.Add(filmView);
+                }*/
+                //db.SaveChanges();
+                switchToFilmsList();
+
             }
             else
             {
@@ -139,18 +139,25 @@ namespace ProjektWPF.Pages
 
         private void addShowing(object sender, RoutedEventArgs e)
         {
-            if(showingsList.Count<5)
-                showingsList.Add(showingDateAndTime.Text);
+            FilmViewing newFilmViewing;
+            if (filmsViewingsL.Count < 5)
+            {
+                newFilmViewing = new FilmViewing()
+                {
+                    FilmId = film.Id,
+                    DateOfViewing = DateTime.Parse(showingDateAndTime.Text),
+                };
+
+                filmsViewingsL.Add(newFilmViewing);
+                db.FilmViewing.Add(newFilmViewing);
+
+            }
         }
 
         private void deleteShowing(object sender, MouseButtonEventArgs e)
         {
-            for (int i = showingsList.Count - 1; i >= 0; i--)
-                if (showingsList[i] == showingsListBox.SelectedItem.ToString())
-                {
-                    showingsList.RemoveAt(i);
-                    break;  //delete only one element when found
-                }
+            db.FilmViewing.Remove((FilmViewing)showingsListBox.SelectedItem); //delete selected item from db                
+            filmsViewingsL.Remove((FilmViewing)showingsListBox.SelectedItem);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace ProjektWPF
         {
 
 
-            ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+            Model1 db = new Model1();
             MainWindow mainWindow;
             var registeredUsers = from u in db.User select u;
 

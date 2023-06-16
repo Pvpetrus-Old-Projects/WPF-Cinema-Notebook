@@ -20,7 +20,7 @@ namespace ProjektWPF.Pages
     /// </summary>
     public partial class Films : Page
     {
-        ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+        Model1 db = new Model1();
         private List<Film> filmsL;
         public int UserId { get; set; }
 
@@ -54,7 +54,7 @@ namespace ProjektWPF.Pages
         private void doubleClickOnFilm(object sender, MouseButtonEventArgs e)
         {
             Film selectedElement = filmsList.SelectedItem as Film;
-            FilmDetails filmDetails = new FilmDetails(selectedElement.Id, selectedElement.Name, selectedElement.DateOfPremiere, selectedElement.Viewed, selectedElement.Description);
+            FilmDetails filmDetails = new FilmDetails(selectedElement.Id, selectedElement.Name, (DateTime)selectedElement.DateOfPremiere, (bool)selectedElement.Viewed, selectedElement.Description);
             filmDetails.LoggedUserId = UserId; //set user data
             NavigationService navigationService = NavigationService.GetNavigationService(this);
             navigationService.Navigate(filmDetails);            

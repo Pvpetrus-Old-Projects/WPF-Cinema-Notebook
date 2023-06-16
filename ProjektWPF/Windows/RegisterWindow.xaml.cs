@@ -41,7 +41,7 @@ namespace ProjektWPF
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            ApplicationDatabaseEntities db = new ApplicationDatabaseEntities();
+            Model1 db = new Model1();
 
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Text;

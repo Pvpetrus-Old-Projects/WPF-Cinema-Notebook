@@ -339,3 +339,25 @@ C:\Users\zibi-\Source\Repos\ProjektWPF3\ProjektWPF\obj\Debug\ProjektWPF.csproj.C
 C:\Users\zibi-\Source\Repos\ProjektWPF3\ProjektWPF\obj\Debug\ProjektWPF.csproj.CopyComplete
 C:\Users\zibi-\Source\Repos\ProjektWPF3\ProjektWPF\obj\Debug\ProjektWPF.exe
 C:\Users\zibi-\Source\Repos\ProjektWPF3\ProjektWPF\obj\Debug\ProjektWPF.pdb
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\nl-BE\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\Notes.g.cs
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\NoteDetails.g.cs
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\Notes.baml
+C:\Users\Speed\Desktop\WPF\wpf proj\ProjektWPF\obj\Debug\Pages\NoteDetails.baml
